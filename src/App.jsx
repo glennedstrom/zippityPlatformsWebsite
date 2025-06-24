@@ -12,7 +12,18 @@ export default function App() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-black text-white overflow-x-hidden">
+        <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
+            {/* Global Background Elements */}
+            <div className="fixed inset-0 pointer-events-none">
+                <div className="absolute top-10 left-10 w-96 h-96 bg-pink-500/8 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute top-40 right-20 w-80 h-80 bg-pink-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <div className="absolute top-96 left-1/4 w-64 h-64 bg-pink-600/6 rounded-full blur-3xl animate-pulse delay-2000"></div>
+                <div className="absolute bottom-40 left-10 w-72 h-72 bg-pink-500/8 rounded-full blur-3xl animate-pulse delay-500"></div>
+                <div className="absolute bottom-20 right-1/3 w-88 h-88 bg-pink-400/10 rounded-full blur-3xl animate-pulse delay-1500"></div>
+                <div className="absolute top-1/3 right-10 w-56 h-56 bg-pink-300/12 rounded-full blur-3xl animate-pulse delay-3000"></div>
+                <div className="absolute bottom-1/3 left-1/2 w-40 h-40 bg-pink-500/15 rounded-full blur-3xl animate-pulse delay-2500"></div>
+            </div>
+
             {/* Navigation */}
             <nav className={`fixed w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-black/90 backdrop-blur-xl border-b border-gray-800' : 'bg-transparent'}`}>
                 <div className="max-w-7xl mx-auto px-6 py-4">
@@ -22,7 +33,7 @@ export default function App() {
                                 <Zap className="w-5 h-5 text-white" />
                             </div>
                             <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                                Zippity
+                                Zippity AI
                             </span>
                         </div>
 
@@ -63,12 +74,15 @@ export default function App() {
 
             {/* Hero Section */}
             <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-                {/* Animated Background */}
+                {/* Enhanced Animated Background */}
                 <div className="absolute inset-0">
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-pink-900/20"></div>
                     <div className="absolute top-20 left-20 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-                    <div className="absolute bottom-20 right-20 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                    <div className="absolute bottom-20 right-20 w-96 h-96 bg-pink-500/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+                    <div className="absolute top-32 right-1/3 w-64 h-64 bg-pink-400/12 rounded-full blur-3xl animate-pulse delay-1500"></div>
+                    <div className="absolute bottom-32 left-1/4 w-80 h-80 bg-pink-600/8 rounded-full blur-3xl animate-pulse delay-2000"></div>
+                    <div className="absolute top-3/4 right-10 w-48 h-48 bg-pink-500/18 rounded-full blur-3xl animate-pulse delay-2500"></div>
                 </div>
 
                 <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
@@ -106,8 +120,13 @@ export default function App() {
             </section>
 
             {/* Stats Section */}
-            <section className="py-20 border-y border-gray-800">
-                <div className="max-w-7xl mx-auto px-6">
+            <section className="py-20 border-y border-gray-800 relative">
+                {/* Additional background elements for stats section */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-0 left-1/4 w-32 h-32 bg-pink-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+                    <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-pink-400/8 rounded-full blur-2xl animate-pulse delay-2000"></div>
+                </div>
+                <div className="max-w-7xl mx-auto px-6 relative">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         <div className="text-center">
                             <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
@@ -140,6 +159,13 @@ export default function App() {
             {/* Products Section */}
             <section id="products" className="py-32 relative">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent"></div>
+                {/* Enhanced background elements for products section */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-20 left-10 w-56 h-56 bg-pink-500/12 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute top-1/2 right-20 w-72 h-72 bg-pink-400/8 rounded-full blur-3xl animate-pulse delay-1500"></div>
+                    <div className="absolute bottom-20 left-1/3 w-48 h-48 bg-pink-600/15 rounded-full blur-3xl animate-pulse delay-2500"></div>
+                    <div className="absolute top-1/3 left-1/2 w-36 h-36 bg-pink-300/18 rounded-full blur-2xl animate-pulse delay-3000"></div>
+                </div>
                 <div className="max-w-7xl mx-auto px-6 relative">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl md:text-6xl font-bold mb-6">
@@ -215,8 +241,15 @@ export default function App() {
             </section>
 
             {/* Testimonials */}
-            <section className="py-32 bg-gradient-to-r from-gray-900/50 to-gray-800/50">
-                <div className="max-w-7xl mx-auto px-6">
+            <section className="py-32 bg-gradient-to-r from-gray-900/50 to-gray-800/50 relative">
+                {/* Enhanced background elements for testimonials */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-10 right-10 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-10 left-20 w-80 h-80 bg-pink-400/8 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                    <div className="absolute top-1/2 left-10 w-44 h-44 bg-pink-600/12 rounded-full blur-2xl animate-pulse delay-2000"></div>
+                    <div className="absolute top-1/3 right-1/3 w-52 h-52 bg-pink-300/15 rounded-full blur-3xl animate-pulse delay-3000"></div>
+                </div>
+                <div className="max-w-7xl mx-auto px-6 relative">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl font-bold mb-6">
                             <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
@@ -292,6 +325,13 @@ export default function App() {
             {/* CTA Section */}
             <section className="py-32 relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-transparent to-pink-900/20"></div>
+                {/* Enhanced background elements for CTA section */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-20 left-1/4 w-60 h-60 bg-pink-500/14 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-20 right-1/4 w-88 h-88 bg-pink-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                    <div className="absolute top-1/2 left-10 w-40 h-40 bg-pink-600/16 rounded-full blur-2xl animate-pulse delay-2000"></div>
+                    <div className="absolute bottom-1/3 right-10 w-56 h-56 bg-pink-300/12 rounded-full blur-3xl animate-pulse delay-1500"></div>
+                </div>
                 <div className="max-w-4xl mx-auto text-center px-6 relative">
                     <h2 className="text-5xl md:text-6xl font-bold mb-8">
                         <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
@@ -299,7 +339,7 @@ export default function App() {
                         </span>
                     </h2>
                     <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-                        Join hundreds of companies already using Zippity to power their AI initiatives.
+                        Join hundreds of companies already using Zippity AI to power their AI initiatives.
                         Get started today with our free trial.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
@@ -314,8 +354,13 @@ export default function App() {
             </section>
 
             {/* Footer */}
-            <footer className="border-t border-gray-800 py-16">
-                <div className="max-w-7xl mx-auto px-6">
+            <footer className="border-t border-gray-800 py-16 relative">
+                {/* Background elements for footer */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-0 left-20 w-32 h-32 bg-pink-500/8 rounded-full blur-2xl animate-pulse"></div>
+                    <div className="absolute bottom-0 right-20 w-44 h-44 bg-pink-400/6 rounded-full blur-2xl animate-pulse delay-1000"></div>
+                </div>
+                <div className="max-w-7xl mx-auto px-6 relative">
                     <div className="grid md:grid-cols-4 gap-8">
                         <div>
                             <div className="flex items-center space-x-2 mb-6">
@@ -323,7 +368,7 @@ export default function App() {
                                     <Zap className="w-5 h-5 text-white" />
                                 </div>
                                 <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                                    Zippity
+                                    Zippity AI
                                 </span>
                             </div>
                             <p className="text-gray-400 mb-6">
